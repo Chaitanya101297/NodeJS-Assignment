@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>persons</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body >
+	<div >
+        
+          <div >
+              <a href="index.html">
+                  <span ><span style = "color:red">Personal Details</span>
+              </a>
+            </div>
+    </div>
+    <br>
+    <!--ng-controller is used to refer the defintion of the functions present-->
+	<div  ng-controller="AppCtrl">
+		<div >
+					 Name:<input class="form-control" ng-model="order.name">
+					 <br>
+					 Age:<input class="form-control" ng-model="order.age">
+					 <br>
+					Gender:<input class="form-control" ng-model="order.gender">
+					<br>
+					Phone Number:<input class="form-control" ng-model="order.number"><br>
+					<button class="btn btn-primary" ng-click="place()">Insert</button>&nbsp;&nbsp;
+					<button class="btn btn-info" ng-click="update()" >Update</button>&nbsp;&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Delete</button>
+		</div>
+					
+				<div style="padding:60px;">
+                      <h2 class="header-h" style="color: white">All Persons</h2>
+        		</div>
+        	<div style = "color: black">
+		        <table class = "table">
+		            <thead >
+		            <th>Name</th>
+		            <th>Age</th>
+					<th>Gender</th>
+		            <th>Phone Number</th>
+		            <th></th>
+					<th>&nbsp;</th>
+		            </thead>
+		            <tbody >
+		            <tr ng-repeat="personal in orders">
+					<td>{{personal.name}}</td>
+					<td>{{personal.age}}</td>
+					<td>{{personal.gender}}</td>
+					<td>{{personal.number}}</td>
+					</tr>
+				</tbody>
+		    	</table>
+    		</div>
+	</div>
+</body>
+</html>
